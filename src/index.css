@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom glassmorphism utilities */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .gradient-bg-light {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Chat messages */
+.chat-message {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* PDF viewer styles */
+.react-pdf__Page__canvas {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading animation */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0ea5e9;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Drag and drop area */
+.drop-zone {
+  transition: all 0.3s ease;
+}
+
+.drop-zone.drag-over {
+  transform: scale(1.02);
+  border-color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.1);
+}
+
+/* Button hover effects */
+.btn-glass {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(14, 165, 233, 0.3);
+}
+
+.btn-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-glass:hover::before {
+  left: 100%;
+}
+
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+}
+
+/* Enhanced button styles */
+.btn-glass {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(14, 165, 233, 0.4);
+}
+
+.btn-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-glass:hover::before {
+  left: 100%;
+}
+
+/* Enhanced drop zone */
+.drop-zone {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drop-zone.drag-over {
+  transform: scale(1.02);
+  border-color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.1);
+  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.3);
+}
+
+/* PDF viewer container */
+.pdf-viewer-container {
+  scroll-behavior: smooth;
+}
+
+/* Citation hover effects */
+.citation-button {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.citation-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.4s ease-out;
+}
+
+/* Gradient backgrounds */
+.gradient-bg-enhanced {
+  background: linear-gradient(135deg,
+  #667eea 0%,
+  #764ba2 25%,
+  #f093fb 50%,
+  #f5576c 75%,
+  #4facfe 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Enhanced progress bar */
+.progress-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
